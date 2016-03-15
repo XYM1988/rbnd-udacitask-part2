@@ -1,4 +1,3 @@
-require_relative 'listable.rb'
 class LinkItem
   include Listable
   attr_reader :description, :site_name
