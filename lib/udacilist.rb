@@ -36,4 +36,45 @@ class UdaciList
       puts "#{position + 1}) #{item.details}"
     end
   end
+  def filter(type)
+    result = []
+    if type == "event"
+      @items.each do |item|
+        if item.is_a?(EventItem)
+          result.push(item)
+        end
+      end
+    elsif type == "todo"
+      @items.each do |item|
+        if item.is_a?(TodoItem)
+          result.push(item)
+        end
+      end
+    elsif type == "link"
+      @items.each do |item|
+        if item.is_a?(LinkItem)
+          result.push(item)
+        end
+      end
+    end
+    return result
+  end
+  def todo_with_duedate()
+    result = []
+    @items.each do |item|
+      if item.is_a?(TodoItem) && item.due != nil && item.due != "N/A"
+        result.push(item)
+      end
+    end
+    return result
+  end
+  def high_priority()
+    result = []
+    @items.each do |item|
+      if item.is_a?(TodoItem) && item.priority == "high"
+        result.push(item)
+      end
+    end
+    return result
+  end
 end

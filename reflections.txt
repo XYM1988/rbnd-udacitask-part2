@@ -1,13 +1,18 @@
 # What you added to Udacitask 2.0
 # -------------------------------------------------------
 1. What is the gem of your choice and how did you use it?
+Artii because it is convenient and can generate a better header.
 2. Describe the 2 features you added to the project.
-  a) Feature 1...
-  b) Feature 2...
+  a) Feature 1... todo_with_duedate() A function that could be used to filter for todo items with due date
+  b) Feature 2... high_priority() A function that could be used to filter for todo items with high_priority
 
 # REFLECTIONS
 # -------------------------------------------------------
 1. How long did you spend working on this project?
+around 1 hours 
 2. What was the most rewarding challenge you conquered?
+refactor my format_date function
 3. What two additional features did you build? Why?
+todo_with_duedate() and high_priority(). These two are filter function that could be handy for users of my todolist.
 4. Where do you still have room to grow?
+learn the underlying theory of Gemfile
