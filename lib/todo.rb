@@ -1,12 +1,17 @@
+require 'chronic'
 class TodoItem
-  include Listable
+  include Listable, UdaciListErrors
   attr_reader :description, :due, :priority
 
   def initialize(description, options={})
     @description = description
-    @due = options[:due] ? Date.parse(options[:due]) : options[:due]
+    @due = options[:due] ? Chronic.parse(options[:due]) : options[:due]
     @priority = options[:priority]
+    if @priority != "low" && @priority != "medium" && @priority != "high" && @priority != "" && @priority != nil
+      raise UdaciListErrors::InvalidPriorityValue, "!!!!!!Wrong Priority!!!!!!"
+    end
   end
+
 
 
   def details
